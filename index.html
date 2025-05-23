@@ -1,56 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-   <header>
+  <body>
+    <header></header>
+    <main>
+      <div class="flex justify-center items-center pt-8">
+        <table class="table-auto w-2/3 drop-shadow-lg rounded-lg overflow-hidden">
+          <thead>
+            <tr>
+              <th class="bg-blue-400">ID</th>
+              <th class="bg-blue-400">Titulo</th>
+              <th class="bg-blue-400">Descripcion</th>
+              <th class="bg-blue-400">Estado</th>
+              <th class="bg-blue-400">Fecha de Vencimiento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-300 ... bg-blue-100"></td>
+              <td class="border border-gray-300 ... bg-blue-100"></td>
+              <td class="border border-gray-300 ... bg-blue-100"></td>
+              <td class="border border-gray-300 ... bg-blue-100">
+                <select class="w-full" name="status" id="">
+                  <option value="blank"></option>
+                  <option value="inProcess">En proceso</option>
+                  <option value="attended">Atendido</option>
+                </select>
+              </td>
+              <td class="border border-gray-300 ... bg-blue-100"></td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 ... bg-blue-100">
+                
+              </td>
+              <td class="border border-gray-300 ... bg-blue-100"></td>
+              <td class="border border-gray-300 ... bg-blue-100"></td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 ... bg-blue-100">
 
-   </header>
-   <main>
-    <div class="flex justify-center items-center pt-8">
-    <table class="table-auto w-2/3">
-  <thead>
-    <tr>
-      <th class="bg-blue-400">Song</th>
-      <th class="bg-blue-400">Artist</th>
-      <th class="bg-blue-400">Year</th> 
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="border border-gray-300 ... bg-blue-100">The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-      <td class="border border-gray-300 ... bg-blue-100">Malcolm Lockyer</td>
-      <td class="border border-gray-300 ... bg-blue-100">1961</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 ... bg-blue-100">Witchy Woman</td>
-      <td class="border border-gray-300 ... bg-blue-100">The Eagles</td>
-      <td class="border border-gray-300 ... bg-blue-100">1972</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 ... bg-blue-100">Shining Star</td>
-      <td class="border border-gray-300 ... bg-blue-100">Earth, Wind, and Fire</td>
-      <td class="border border-gray-300 ... bg-blue-100">1975</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-<div class=" flex justify-center items-center p-8">
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        <a href="">Consultar</a>
-    </button>
-</div>
-   </main>
-   <footer>
-
-   </footer>
-</body>
-
+              </td>
+              <td class="border border-gray-300 ... bg-blue-100">
+                
+              </td>
+              <td class="border border-gray-300 ... bg-blue-100"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="flex justify-center">
+        <div class="flex justify-center items-center p-8">
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            <a href="">Consultar</a>
+          </button>
+        </div>
+        <div class="flex justify-center items-center p-8">
+          <button
+            class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+          >
+            <a href="">Actualizar</a>
+          </button>
+        </div>
+        <div class="flex justify-center items-center p-8">
+          <button
+            class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          >
+            <a href="">Eliminar</a>
+          </button>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
 </html>
