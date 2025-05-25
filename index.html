@@ -5,14 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Crud Tailwind</title>
   </head>
 
   <body>
-    <header></header>
+    <header class="bg-indigo-200 pb-4">
+      <div class="sm:text-[2.5rem] ">
+        <h1 class="text-white text-shadow-lg/30">JavaScript CRUD</h1>
+      </div>
+    </header>
     <main>
       <div class="flex justify-center items-center pt-8">
-        <table class="table-auto w-2/3 drop-shadow-lg rounded-lg overflow-hidden">
+        <table
+          class="table-auto w-2/3 drop-shadow-lg rounded-lg overflow-hidden"
+        >
           <thead>
             <tr>
               <th class="bg-blue-400">ID</th>
@@ -37,46 +44,76 @@
               <td class="border border-gray-300 ... bg-blue-100"></td>
             </tr>
             <tr>
-              <td class="border border-gray-300 ... bg-blue-100">
-                
-              </td>
+              <td class="border border-gray-300 ... bg-blue-100"></td>
               <td class="border border-gray-300 ... bg-blue-100"></td>
               <td class="border border-gray-300 ... bg-blue-100"></td>
             </tr>
             <tr>
-              <td class="border border-gray-300 ... bg-blue-100">
-
-              </td>
-              <td class="border border-gray-300 ... bg-blue-100">
-                
-              </td>
+              <td class="border border-gray-300 ... bg-blue-100"></td>
+              <td class="border border-gray-300 ... bg-blue-100"></td>
               <td class="border border-gray-300 ... bg-blue-100"></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div class="flex justify-center">
-        <div class="flex justify-center items-center p-8">
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 p-4">
+         <button
+            class="w-32 sm:w-auto block bg-yellow-300 hover:bg-red-700 text-white font-bold  py-2 px-4 rounded drop-shadow-lg"
+          >
+            <a href="">Crear Orden</a>
           <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            class="w-32 sm:w-auto block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded drop-shadow-lg"
           >
             <a href="">Consultar</a>
-          </button>
-        </div>
-        <div class="flex justify-center items-center p-8">
+
           <button
-            class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            class="w-32 sm:w-auto block bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded drop-shadow-lg"
           >
             <a href="">Actualizar</a>
-          </button>
-        </div>
-        <div class="flex justify-center items-center p-8">
+
           <button
-            class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            class="w-32 sm:w-auto block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded drop-shadow-lg"
           >
             <a href="">Eliminar</a>
-          </button>
+          
         </div>
+      </div>
+      <div class="=flex justify-items-center pt-8">
+        
+      <div class="flex justify-center rounded-lg border border-gray-100 p-4 w-3xl bg-blue-400/60 " >
+        
+        <form action="">
+          <h2 class=" flex justify-center text-2xl text-white">Crear Orden de Servicio</h2>
+          <span class="flex justify-end"><img class="w-4" src="./assets/cancelar.png" alt=""></span>
+          <div class="flex flex-col gap-2">
+            <label class="text-white" for="name">Nombre</label>
+            <input class="border-2 rounded-md border-indigo-500 w-lg" type="text" placeholder = "Tipo Servicio" />
+          </div>
+           <div class="flex flex-col gap-2">
+            <label class=" text-white" for="lastName">Apellido</label>
+            <input class="border-2 rounded-md border-indigo-500 w-lg" type="text" placeholder = "Tipo Servicio" />
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class=" text-white" for="mail">e-mail</label>
+            <input class="border-2 rounded-md border-indigo-500 w-lg" type="text" placeholder = "Tipo Servicio" />
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class=" text-white" for="description">Descripcion del Servicio</label>
+            <textarea class="border-2 rounded-md border-indigo-500 w-lg h-48" type="text" placeholder = "Tipo Servicio" ></textarea>
+          </div>
+          <div>
+          <div class="flex justify-center gap-4 p-8">
+            <button class="bg-green-400 hover:bg-green-700 text-white font-bold w-32 py-2 px-4 sm:w-auto rounded drop-shadow-lg">
+              <a href="">Aceptar</a>
+            </button>
+             <div>
+            <button class="bg-red-400 hover:bg-red-700 text-white font-bold w-32 py-2 px-4 sm:w-auto rounded drop-shadow-lg">
+              <a href="">Cancelar</a>
+            </button>
+          </div>
+          </div>
+        </form>
+      </div>
       </div>
     </main>
     <footer></footer>
