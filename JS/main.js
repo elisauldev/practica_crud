@@ -7,7 +7,7 @@ const submitOrderButton = document.querySelector('#addUserInfo')
 modalNewOrder.style.display = 'none'
 
 createOrderButton.addEventListener('click', (e) => {
-    e.preventDefault
+    e.preventDefault()
     modalNewOrder.style.display = 'flex'
     modalNewOrder.style.justifyContent = 'center'
     
