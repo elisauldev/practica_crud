@@ -6,6 +6,8 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <script defer src="/JS/main.js"></script>
+    <script src="./JS/datos.js"></script>
     <title>Crud Tailwind</title>
   </head>
 
@@ -57,58 +59,58 @@
         </table>
       </div>
       <div class="flex flex-col sm:flex-row justify-center items-center gap-4 p-4">
-         <button
-            class="w-32 sm:w-auto block bg-yellow-300 hover:bg-red-700 text-white font-bold  py-2 px-4 rounded drop-shadow-lg"
+         <button id="createOrder"
+            class="w-32 sm:w-auto block bg-yellow-300 hover:bg-yellow-600 text-white font-bold  py-2 px-4 rounded drop-shadow-lg"
           >
-            <a href="">Crear Orden</a>
+            <p>Crear Orden</p>
           <button
             class="w-32 sm:w-auto block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded drop-shadow-lg"
           >
-            <a href="">Consultar</a>
+            <p>Consultar</p>
 
           <button
             class="w-32 sm:w-auto block bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded drop-shadow-lg"
           >
-            <a href="">Actualizar</a>
+            <p>Actualizar</p>
 
           <button
             class="w-32 sm:w-auto block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded drop-shadow-lg"
           >
-            <a href="">Eliminar</a>
+            <p>Eliminar</p>
           
         </div>
       </div>
-      <div class="=flex justify-items-center pt-8">
+      <div id="modalCreateOrder" class= "fixed inset-0 z-50 flex justify-center items-center bg-black/40 ">
         
-      <div class="flex justify-center rounded-lg border border-gray-100 p-4 w-3xl bg-blue-400/60 " >
+      <div class= "w-full max-w-md mx-6 rounded-lg sm:p-4 bg-blue-400/90" >
         
         <form action="">
           <h2 class=" flex justify-center text-2xl text-white">Crear Orden de Servicio</h2>
-          <span class="flex justify-end"><img class="w-4" src="./assets/cancelar.png" alt=""></span>
+          <span id="closeButton" class="flex justify-end"><img class="w-4" src="./assets/cancelar.png" alt=""></span>
           <div class="flex flex-col gap-2">
             <label class="text-white" for="name">Nombre</label>
-            <input class="border-2 rounded-md border-indigo-500 w-lg" type="text" placeholder = "Tipo Servicio" />
+            <input id="userName" class="border-2 bg-white rounded-md border-indigo-500 w-full  " type="text" placeholder = "Nombre" />
           </div>
            <div class="flex flex-col gap-2">
             <label class=" text-white" for="lastName">Apellido</label>
-            <input class="border-2 rounded-md border-indigo-500 w-lg" type="text" placeholder = "Tipo Servicio" />
+            <input id ="userLastName" class="border-2 bg-white rounded-md border-indigo-500 w-full  " type="text" placeholder = "Apellido" />
           </div>
           <div class="flex flex-col gap-2">
             <label class=" text-white" for="mail">e-mail</label>
-            <input class="border-2 rounded-md border-indigo-500 w-lg" type="text" placeholder = "Tipo Servicio" />
+            <input id ="userEmail" class="border-2 bg-white rounded-md border-indigo-500 w-full  " type="text" placeholder = "e-mail" />
           </div>
           <div class="flex flex-col gap-2">
             <label class=" text-white" for="description">Descripcion del Servicio</label>
-            <textarea class="border-2 rounded-md border-indigo-500 w-lg h-48" type="text" placeholder = "Tipo Servicio" ></textarea>
+            <textarea id="userRequest" class="border-2 bg-white rounded-md border-indigo-500 w-full h-48" type="text" placeholder = "Tipo Servicio" ></textarea>
           </div>
           <div>
-          <div class="flex justify-center gap-4 p-8">
+          <div id="addUserInfo" class="flex justify-center gap-4 p-8">
             <button class="bg-green-400 hover:bg-green-700 text-white font-bold w-32 py-2 px-4 sm:w-auto rounded drop-shadow-lg">
-              <a href="">Aceptar</a>
+              <p>Aceptar</p>
             </button>
              <div>
-            <button class="bg-red-400 hover:bg-red-700 text-white font-bold w-32 py-2 px-4 sm:w-auto rounded drop-shadow-lg">
-              <a href="">Cancelar</a>
+            <button id="cancelModalButton" class="bg-red-400 hover:bg-red-700 text-white font-bold w-32 py-2 px-4 sm:w-auto rounded drop-shadow-lg">
+              <p>Cancelar<p>
             </button>
           </div>
           </div>
