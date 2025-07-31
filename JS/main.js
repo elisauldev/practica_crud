@@ -89,11 +89,12 @@ function orderCreatedAlert() {
   orderCreatedModal.innerHTML =
    `<div class ="fixed inset-0 z-50 flex justify-center items-center bg-black/40 p-4">
         <div class = "bg-blue-400/90 p-4 rounded-lg text-center">
-        <span id= "closeOderCreated" class="flex justify-end"><img class="w-4" src="./assets/cancelar.png" alt=""></span>
             <p>Ha sido creada la orden N°: <b>${lastOrder.newOrder}</b></p>
+            <button id="closeOderCreated" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Cerrar</button>
      </div>
         </div>`;
         document.getElementById("closeOderCreated").addEventListener("click", () => {
+          showData()
           orderCreatedModal.style.display = "none";
         })
 }
@@ -108,21 +109,27 @@ function showData(){
   let userData = JSON.parse(localStorage.getItem('userData')) || []
   if(userData.length === 0) return
   const orderTable = document.querySelector("#userOrders")
-  const lastOrder= userData[userData.length - 1]
-
-orderTable.innerHTML = 
+  let rows = ""
+  userData.slice().reverse().forEach( lastOrder=> {
+    rows += 
 `<tr class="border border-gray-300">
   <td class="border border-gray-300 ... bg-blue-100 p-4">${lastOrder.newOrder}</td>
+  <td class="border border-gray-300 ... bg-blue-100 p-4">${lastOrder.name}</td>
   <td class="border border-gray-300 ... bg-blue-100 p-4">${lastOrder.service}</td>
   <td class="border border-gray-300 ... bg-blue-100 p-4">${lastOrder.request}</td>
   <td class="border border-gray-300 ... bg-blue-100"></td>
   <td class="border border-gray-300 ... bg-blue-100"></td>
-  </tr>`;
-  const orderStatus = document.querySelector("#orderStatus");
-  orderStatus.style.display = "table-cell";
+  </tr>`
+ 
+  });
+  orderTable.innerHTML = rows
+  
+  //userData[userData.length - 1]
+
+  //modal para mostrar la ultima orden creada
+
+
+ 
 
 }
-submitOrderButton.addEventListener("click", (e) => {
-  e.preventDefault()
-  showData()
-})
+
