@@ -42,7 +42,7 @@
             class="w-32 sm:w-auto block bg-yellow-300 hover:bg-yellow-600 text-white font-bold  py-2 px-4 rounded drop-shadow-lg"
           >
             <p>Crear Orden</p>
-          <button
+          <button id="searchOrders"
             class="w-32 sm:w-auto block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded drop-shadow-lg"
           >
             <p>Consultar</p>
@@ -98,6 +98,12 @@
       </div>
       </div>
         <div id="modalOrderCreated" style="display: none"></div>
+      </div>
+      <div id="modalSearchOrder" style="display: none;" class="justify-center items-center flex bg-black/40 fixed inset-0 z-50 flex justify-center items-center">
+        <label for="search"  class="max-w-md w-xs flex flex-col items-center justify-center items-center gap-4 p-4 bg-blue-400 rounded-lg shadow-lg">
+          <input type="text" id="search" class="w-2xs bg-white rounded-lg"  placeholder="Buscar ID">
+          <button id="closeSearch" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Cerrar</button>
+        </label>
       </div>
       <div class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
   <div class="flex flex-1 justify-between sm:hidden">

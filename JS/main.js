@@ -6,7 +6,7 @@ const closeModalButton = document.querySelector("#cancelModalButton");
 const submitOrderButton = document.querySelector("#addUserInfo");
 const orderCreatedModal = document.querySelector("#modalOrderCreated");
 const orderTable = document.querySelector("#userOrders");
-
+const searchOrdersButton = document.querySelector("#searchOrders");
 modalNewOrder.style.display = "none";
 
 createOrderButton.addEventListener("click", (e) => {
@@ -123,13 +123,15 @@ function showData(){
  
   });
   orderTable.innerHTML = rows
-  
-  //userData[userData.length - 1]
-
-  //modal para mostrar la ultima orden creada
-
-
- 
-
 }
 
+//modal para buscar ordenes
+searchOrdersButton.addEventListener("click", (e) => {
+  e.preventDefault()
+  const searchInput = document.querySelector("#modalSearchOrder");
+  searchInput.style.display = "flex";})
+document.querySelector("#closeSearch").addEventListener("click", (e) => {
+  e.preventDefault();
+  const searchInput = document.querySelector("#modalSearchOrder");
+  searchInput.style.display = "none";
+})
