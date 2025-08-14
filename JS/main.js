@@ -7,6 +7,7 @@ const submitOrderButton = document.querySelector("#addUserInfo");
 const orderCreatedModal = document.querySelector("#modalOrderCreated");
 const orderTable = document.querySelector("#userOrders");
 const searchOrdersButton = document.querySelector("#searchOrders");
+const searchDataButton = document.querySelector("#searchId");
 modalNewOrder.style.display = "none";
 
 createOrderButton.addEventListener("click", (e) => {
@@ -135,3 +136,40 @@ document.querySelector("#closeSearch").addEventListener("click", (e) => {
   const searchInput = document.querySelector("#modalSearchOrder");
   searchInput.style.display = "none";
 })
+
+// funcion para buscar ordenes por ID
+searchDataButton.addEventListener("click", (e) => {
+  e.preventDefault();
+if(document.querySelector("#search").value === "") {
+    alert("Debes ingresar un ID");
+    return
+  } 
+  
+    let userData = JSON.parse(localStorage.getItem('userData')) || []
+    let found = false
+    userData.forEach((order) => {
+      if (order.newOrder === document.querySelector("#search").value) {
+        orderTable.innerHTML = `
+          <tr class="border border-gray-300">
+            <td class="border border-gray-300 ... bg-blue-100 p-4">${order.newOrder}</td>
+            <td class="border border-gray-300 ... bg-blue-100 p-4">${order.name}</td>
+            <td class="border border-gray-300 ... bg-blue-100 p-4">${order.service}</td>
+            <td class="border border-gray-300 ... bg-blue-100 p-4">${order.request}</td>
+            <td class="border border-gray-300 ... bg-blue-100"></td>
+            <td class="border border-gray-300 ... bg-blue-100"></td>
+          </tr>`;
+          document.querySelector("#modalSearchOrder").style.display = "none";
+          found = true
+      }
+      
+     
+
+    })
+if(!found) {
+    alert("Orden no encontrada");
+    document.querySelector("#search").value = "";
+  }
+})
+
+  
+
