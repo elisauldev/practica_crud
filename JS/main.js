@@ -151,12 +151,12 @@ if(document.querySelector("#search").value === "") {
       if (order.newOrder === document.querySelector("#search").value) {
         orderTable.innerHTML = `
           <tr class="border border-gray-300">
-            <td class="border border-gray-300 ... bg-blue-100 p-4">${order.newOrder}</td>
-            <td class="border border-gray-300 ... bg-blue-100 p-4">${order.name}</td>
-            <td class="border border-gray-300 ... bg-blue-100 p-4">${order.service}</td>
-            <td class="border border-gray-300 ... bg-blue-100 p-4">${order.request}</td>
-            <td class="border border-gray-300 ... bg-blue-100"></td>
-            <td class="border border-gray-300 ... bg-blue-100"></td>
+            <td class="border border-gray-300 ... p-4" style = "background:#c0c8ca">${order.newOrder}</td>
+            <td class="border border-gray-300 ... p-4" style = "background:#c0c8ca">${order.name}</td>
+            <td class="border border-gray-300 ... p-4" style = "background:#c0c8ca">${order.service}</td>
+            <td class="border border-gray-300 ... p-4" style = "background:#c0c8ca">${order.request}</td>
+            <td class="border border-gray-300 ..."></td>
+            <td class="border border-gray-300 ..."></td>
           </tr>`;
           document.querySelector("#modalSearchOrder").style.display = "none";
           found = true
@@ -170,6 +170,13 @@ if(!found) {
     document.querySelector("#search").value = "";
   }
 })
-
-  
+//funcion para actualizar ordenes
+document.querySelector("#updateOrders").addEventListener("click", (e) => {
+  e.preventDefault();
+  document.querySelector("#updateOrder").style.display = "flex";
+})
+document.querySelector("#closeUpdateModal").addEventListener("click", (e) => {
+  e.preventDefault();
+  document.querySelector("#updateOrder").style.display = "none";
+}); 
 

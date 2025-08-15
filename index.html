@@ -11,24 +11,24 @@
     <title>Crud Tailwind</title>
   </head>
 
-  <body class="bg-gray-400">
-    <header class="bg-indigo-200 pb-4">
+  <body class="" style="background-color: #d4d8dd;">
+    <header class="" style="background: #2E4156;">
       <div class="sm:text-[2.5rem] ">
         <h1 class="text-white text-shadow-lg/30 p-8">JavaScript CRUD</h1>
       </div>
     </header>
-    <main>
+    <main class="w-full h-screen">
       <div class="flex justify-center items-center pt-8">
         <table
           class="table-auto w-2/3 drop-shadow-lg rounded-lg overflow-hidden">
           <thead>
             <tr>
-              <th class="bg-blue-400">ID</th>
-              <th class="bg-blue-400">Nombre</th>
-              <th class="bg-blue-400">Titulo</th>
-              <th class="bg-blue-400">Descripcion</th>
-              <th class="bg-blue-400" id="orderStatus" style="display: none;">Estado</th>
-              <th class="bg-blue-400">Fecha de Vencimiento</th>
+              <th class="" style="color: #aab7b7; background: #2e4156;">ID</th>
+              <th class="" style="color: #aab7b7; background: #2e4156;">Nombre</th>
+              <th class="" style="color: #aab7b7; background: #2e4156;">Titulo</th>
+              <th class="" style="color: #aab7b7; background: #2e4156;">Descripcion</th>
+              <th class="" style="color: #aab7b7; background: #2e4156;" id="orderStatus" style="display: none;">Estado</th>
+              <th class="" style="color: #aab7b7; background: #2e4156;">Fecha de Vencimiento</th>
             </tr>
           </thead>
           <tbody id ="userOrders" >
@@ -47,7 +47,7 @@
           >
             <p>Consultar</p>
 
-          <button
+          <button id="updateOrders"
             class="w-32 sm:w-auto block bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded drop-shadow-lg"
           >
             <p>Actualizar</p>
@@ -61,7 +61,7 @@
       </div>
       <div id="modalCreateOrder" class= "fixed inset-0 z-40 flex justify-center items-center bg-black/40 ">
         
-      <div class= "w-full max-w-md mx-6 rounded-lg sm:p-4 bg-blue-400/90" >
+      <div class= "w-full max-w-md mx-6 rounded-lg sm:p-4" style="background: #2e4156;" >
         
         <form action="">
           <h2 class=" flex justify-center text-2xl text-white">Crear Orden de Servicio</h2>
@@ -100,7 +100,7 @@
         <div id="modalOrderCreated" style="display: none"></div>
       </div>
       <div id="modalSearchOrder" style="display: none;" class="justify-center items-center flex bg-black/40 fixed inset-0 z-50 flex justify-center items-center">
-        <label for="search"  class="max-w-md w-xs flex flex-col items-center justify-center items-center gap-4 p-4 bg-blue-400 rounded-lg shadow-lg">
+        <label for="search"  class="max-w-md w-xs flex flex-col items-center justify-center items-center gap-4 p-4 rounded-lg shadow-lg" style="background: #2e4156;">
           <input type="text" id="search" class="w-2xs bg-white rounded-lg"  placeholder="Buscar ID">
           <div class="flex items-center gap-4">
           <button id="searchId" class="bg-green-400 hover:bg-green-700 text-white px-4 py-2 rounded mt-4"> Buscar</button>
@@ -108,7 +108,20 @@
           </div>
         </label>
       </div>
-      <div class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+      <div id="updateOrder" style="display: none;" class="justify-center items-center flex bg-black/40 fixed inset-0 z-50 flex justify-center items-center">
+        <label for="" class="max-w-md w-xs flex flex-col items-center justify-center items-center gap-4 p-4 rounded-lg shadow-lg" style="background: #2e4156;"">
+          <input type="text" placeholder="Nombre" class="w-2xs bg-white rounded-lg" >
+          <input type="text" placeholder="Apellido" class="w-2xs bg-white rounded-lg" >
+          <input type="text" placeholder="e-mail" class="w-2xs bg-white rounded-lg" >
+          <input type="text" placeholder="Titulo Servicio" class="w-2xs bg-white rounded-lg" >
+          <textarea placeholder="Descripcion del Servicio" class="w-2xs bg-white rounded-lg h-48"></textarea>
+          <div class="flex items-center gap-4">
+          <button  class="bg-green-400 hover:bg-green-700 text-white px-4 py-2 rounded mt-4"> Buscar</button>
+          <button id="closeUpdateModal" class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded mt-4">Cerrar</button>
+          </div>
+        </label>
+      </div>
+      <div class="flex items-center justify-between border-t border-gray-200 px-4 py-3 sm:px-6" style="background: #d4d8dd;">
   <div class="flex flex-1 justify-between sm:hidden">
     <a href="#" class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</a>
     <a href="#" class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Next</a>
