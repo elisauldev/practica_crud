@@ -109,15 +109,18 @@
         </label>
       </div>
       <div id="updateOrder" style="display: none;" class="justify-center items-center flex bg-black/40 fixed inset-0 z-50 flex justify-center items-center">
-        <label for="" class="max-w-md w-xs flex flex-col items-center justify-center items-center gap-4 p-4 rounded-lg shadow-lg" style="background: #2e4156;"">
-          <input type="text" placeholder="Nombre" class="w-2xs bg-white rounded-lg" >
-          <input type="text" placeholder="Apellido" class="w-2xs bg-white rounded-lg" >
-          <input type="text" placeholder="e-mail" class="w-2xs bg-white rounded-lg" >
-          <input type="text" placeholder="Titulo Servicio" class="w-2xs bg-white rounded-lg" >
-          <textarea placeholder="Descripcion del Servicio" class="w-2xs bg-white rounded-lg h-48"></textarea>
+        <label for="" class="max-w-md w-xs flex flex-col items-center justify-center items-center gap-4 p-4 rounded-lg shadow-lg" style="background: #2e4156;">
+          <h2 class="" style="color: #aab7b7;">Actualizar Orden</h2>
+          <input id="searchOrder2" type="text" placeholder="ID" class="searchUserInfolbl w-2xs bg-white rounded-lg" img src="">
+          <input id="newName" type="text" placeholder="Nombre" class=" w-2xs bg-white rounded-lg" >
+          <input id="newLastName" type="text" placeholder="Apellido" class=" w-2xs bg-white rounded-lg" >
+          <input id="newEmail" type="text" placeholder="e-mail" class=" w-2xs bg-white rounded-lg" >
+          <input id="newTitle" type="text" placeholder="Titulo Servicio" class=" w-2xs bg-white rounded-lg" >
+          <textarea id="newService" placeholder="Descripcion del Servicio" class=" w-2xs bg-white rounded-lg h-48"></textarea>
           <div class="flex items-center gap-4">
-          <button  class="bg-green-400 hover:bg-green-700 text-white px-4 py-2 rounded mt-4"> Buscar</button>
-          <button id="closeUpdateModal" class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded mt-4">Cerrar</button>
+          <button id="searchUserInfo"  class="bg-green-400 hover:bg-green-700 text-white px-4 py-2 rounded mt-4 drop-shadow-lg"> Buscar</button>
+          <button id="closeUpdateModal" class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded mt-4 drop-shadow-lg">Cerrar</button>
+          <button id="modifyUserInfo" type="submit" class="bg-green-400 hover:bg-green-700 text-white px-4 py-2 rounded mt-4 drop-shadow-lg" style="display: none;"> Aceptar</button>
           </div>
         </label>
       </div>

@@ -180,3 +180,27 @@ document.querySelector("#closeUpdateModal").addEventListener("click", (e) => {
   document.querySelector("#updateOrder").style.display = "none";
 }); 
 
+//funcion para buscar ordenes por ID en el modal de actualizacion
+document.querySelector("#searchUserInfo").addEventListener("click", (e) => {
+  e.preventDefault();
+if(document.querySelector("#searchOrder2").value === "") {
+    alert("Debes ingresar un ID");
+    return
+  } 
+  let userData = JSON.parse(localStorage.getItem('userData')) || []
+  userData.forEach((updatedOrder) => {
+  if(updatedOrder.newOrder === document.querySelector("#searchOrder2").value) {
+    document.querySelector("#modifyUserInfo").style.display = "flex";
+    document.querySelector("#newName").value = updatedOrder.name;
+    document.querySelector("#newLastName").value = updatedOrder.lastName;
+    document.querySelector("#newEmail").value = updatedOrder.email;
+    document.querySelector("#newTitle").value = updatedOrder.service;
+    document.querySelector("#newService").value = updatedOrder.request;
+    document.querySelector("#searchOrder2").setAttribute("disabled", "true");
+    document.querySelector("#searchOrder2").style.backgroundColor = "#c0c8ca";
+    document.querySelector("#searchOrder2").style.color = "#000";
+      }
+})
+    
+  
+})
