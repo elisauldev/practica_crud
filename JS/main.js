@@ -183,12 +183,13 @@ document.querySelector("#closeUpdateModal").addEventListener("click", (e) => {
 //funcion para buscar ordenes por ID en el modal de actualizacion
 document.querySelector("#searchUserInfo").addEventListener("click", (e) => {
   e.preventDefault();
-if(document.querySelector("#searchOrder2").value === "") {
+  if(document.querySelector("#searchOrder2").value === "" || document.querySelector("#searchOrder2").value === null) {
     alert("Debes ingresar un ID");
     return
-  } 
-  let userData = JSON.parse(localStorage.getItem('userData')) || []
-  userData.forEach((updatedOrder) => {
+  }
+  else if(document.querySelector("#searchOrder2").value !== "") {
+    let userData = JSON.parse(localStorage.getItem('userData')) || []
+    userData.forEach((updatedOrder) => {
   if(updatedOrder.newOrder === document.querySelector("#searchOrder2").value) {
     document.querySelector("#modifyUserInfo").style.display = "flex";
     document.querySelector("#newName").value = updatedOrder.name;
@@ -198,9 +199,39 @@ if(document.querySelector("#searchOrder2").value === "") {
     document.querySelector("#newService").value = updatedOrder.request;
     document.querySelector("#searchOrder2").setAttribute("disabled", "true");
     document.querySelector("#searchOrder2").style.backgroundColor = "#c0c8ca";
-    document.querySelector("#searchOrder2").style.color = "#000";
-      }
+    document.querySelector("#searchOrder2").style.color = "#000"
+}
+ 
+  }
+)}
 })
+function storageData() {
+userData.forEach((order) => {
+  if(order.newOrder === document.querySelector("#searchOrder2").value) {
+    order.name = document.querySelector("#newName").value;
+    order.lastName = document.querySelector("#newLastName").value;
+    order.email = document.querySelector("#newEmail").value;
+    order.service = document.querySelector("#newTitle").value;
+    order.request = document.querySelector("#newService").value;
     
-  
+  }
 })
+localStorage.setItem("userData", JSON.stringify(userData));
+}
+function modifyData() {
+  document.querySelector("#modifyUserInfo").addEventListener("click", (e) => {
+    e.preventDefault();
+    storageData()
+    showData()
+   document.querySelector("#updateOrder").style.display = "none";
+   document.querySelector("#modifyUserInfo").style.display = "none";
+   document.querySelector("#updateOrder").style.display = "none";
+   document.querySelector("#searchOrder2").removeAttribute("disabled");
+   document.querySelector("#searchOrder2").style.backgroundColor = "#fff";
+   document.querySelector("#searchOrder2").style.color = "#000";
+   document.querySelector("#searchOrder2").value = "";
+   alert("Orden actualizada correctamente");
+}
+)}
+modifyData()
+showData()
